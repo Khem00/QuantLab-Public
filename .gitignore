@@ -1,0 +1,87 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment and secrets
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.crt
+*.token
+secrets.*
+auth.json
+token.json
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+.notebook_output/
+
+# Market data and generated data
+/data/raw/*
+/data/processed/*
+*.csv
+*.parquet
+*.feather
+*.jsonl
+*.xlsx
+*.xls
+
+# Model artifacts and weights
+models/*
+*.pt
+*.pth
+*.bin
+*.onnx
+*.keras
+*.h5
+*.pkl
+*.joblib
+*.safetensors
+
+# Reports and generated outputs
+reports/*
+notebooks/output/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.pdf
+*.html
+
+# Logs and temp files
+*.log
+*.out
+*.tmp
+*.temp
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Local Qwen Code configuration
+.qwen/
