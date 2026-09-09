@@ -1,19 +1,126 @@
 # QuantLab
 
-QuantLab is a modular quantitative research and financial analysis platform built in Python. The project focuses on reproducible data workflows, validation, experimentation, backtesting, portfolio analytics, and quality-controlled research outputs.
+**AI-assisted quantitative research with reproducible, evidence-first validation.**
+
+QuantLab is a Python-based quantitative research and financial analysis platform
+designed to turn market data and research ideas into testable, reproducible
+evidence.
+
+The project combines quantitative research, financial data validation,
+deterministic backtesting, risk analysis, automated testing, and AI-assisted
+engineering.
+
+The central principle is:
+
+> **AI can accelerate research and engineering. Verification determines
+> whether the resulting financial evidence deserves trust.**
 
 ## What QuantLab Demonstrates
 
-- Python-based quantitative research and data analysis
-- Financial market data loading and normalization
-- Dataset validation and reproducibility checks
-- Rules-based backtesting and portfolio valuation
-- Automated testing with `pytest`
-- AI-assisted software development and code review
-- Structured investigation of implementation and data-quality issues
-- Git-based incremental development and documented checkpoints
+QuantLab brings together three connected areas of work:
 
-## Current Capabilities
+### 1. Quantitative and Financial Research
+
+- Financial market data loading and normalization
+- Data validation and data-trust assessment
+- Quantitative experiments
+- Rules-based strategy research
+- Deterministic backtesting
+- Portfolio valuation and performance analysis
+- Risk and trade statistics
+- Benchmark comparison
+
+### 2. AI-Assisted Reproducible Engineering
+
+AI is used as an engineering and research aid rather than as an authority on
+financial results.
+
+Research workflows are built around:
+
+- Explicit data and strategy contracts
+- Deterministic execution
+- Automated regression testing
+- Validation before interpretation
+- Reproducible artifacts
+- Documented assumptions and limitations
+- Human review
+
+The workflow is:
+
+**Define → Implement → Test → Validate → Reproduce → Review**
+
+See [`ai/`](ai/) for the AI-assisted reproducibility approach.
+
+### 3. Evidence-First Strategy Validation
+
+QuantLab treats a backtest as an evidence-generation process rather than simply
+a performance number.
+
+Validation can include:
+
+- Chronological development/holdout separation
+- Out-of-sample evaluation
+- Benchmark comparison
+- Execution and cost assumptions
+- Cost-stress analysis
+- Exposure analysis
+- Regime analysis
+- Machine-readable evidence artifacts
+- SHA-256 integrity checks
+- Reproducibility manifests
+- Explicit research limitations
+
+## BTC #001 — Reproducible Strategy Validation
+
+[`research/btc-001/`](research/btc-001/) contains a complete public research
+example.
+
+The study evaluates a frozen **BTC SMA20/SMA50 crossover** against
+buy-and-hold using chronological out-of-sample validation.
+
+The OOS period runs from **2022-12-23 to 2026-07-09**.
+
+### Headline result
+
+| Metric | SMA20/SMA50 | Buy & Hold |
+|---|---:|---:|
+| Total return | 42.13% | 45.79% |
+| Sharpe ratio | 0.5263 | 0.5124 |
+| Maximum drawdown | -22.21% | -31.84% |
+| Volatility | 14.52% | 16.43% |
+
+The strategy therefore **did not demonstrate superior cumulative returns**.
+
+It did, however, show lower historical maximum drawdown and volatility over
+the OOS period.
+
+The resulting interpretation is:
+
+> **CAUTION — the evidence is more consistent with exposure management and
+> historical risk reduction than with demonstrated return alpha.**
+
+The study deliberately avoids claiming profitability, persistent alpha,
+future performance, or cross-asset robustness.
+
+## Reproducible Evidence
+
+The BTC #001 evidence directory contains:
+
+- OOS performance summaries
+- Strategy and benchmark equity curves
+- Exposure diagnostics
+- Position events
+- Regime summaries
+- Regime episodes
+- A research report
+- A machine-readable manifest
+- SHA-256 checksums
+
+The evidence files are designed to make the reported result inspectable and
+reproducible rather than dependent on a screenshot or a single performance
+number.
+
+## Current Research Infrastructure
 
 QuantLab currently includes:
 
@@ -27,20 +134,39 @@ QuantLab currently includes:
 - Long-only strategy constraints
 - Next-bar execution semantics
 - Portfolio returns, risk, and trade statistics
+- Strategy and signal input contracts
+- Chronological holdout validation
+- Evidence-pack generation
 - Automated regression and contract tests
-- AI-agent tooling and permission/guard testing
 
-The project is developed incrementally, with changes validated through automated tests and documented engineering checkpoints.
+The current test suite collects **190 tests**.
 
-## Data
+## Evidence Pack
 
-Research workflows have included datasets such as:
+QuantLab's first commercial research offer is a fixed-scope:
 
-- Bitcoin (BTC)
-- Apple (AAPL)
-- Gold
-- S&P 500
-- VIX
+**Backtest Evidence Pack**
+
+The objective is to provide a reproducible account of what a supplied
+strategy and historical dataset actually demonstrate.
+
+A typical pack can contain:
+
+- Strategy specification
+- Dataset and data-trust assessment
+- Deterministic backtest results
+- Benchmark comparison
+- Performance and risk metrics
+- Execution and cost assumptions
+- Reproducibility information
+- Machine-readable evidence
+- Limitations and a research verdict
+- Human review before client-facing use
+
+The Evidence Pack is a **validation and research service, not investment
+advice or a promise of future returns**.
+
+See [`docs/BACKTEST_EVIDENCE_PACK_PILOT.md`](docs/BACKTEST_EVIDENCE_PACK_PILOT.md).
 
 ## Technology
 
@@ -52,51 +178,37 @@ Research workflows have included datasets such as:
 - Black
 - Jupyter
 - Git
-- Qwen / DeepSeek / local AI tooling
-- Ollama
-
-## Quality & Validation
-
-A major focus of QuantLab is making research results reproducible and testable rather than relying only on successful execution.
-
-Development includes:
-
-- Automated regression testing
-- Data validation
-- Reproducibility checks
-- Contract and policy tests
-- Investigation of discrepancies between expected and observed behavior
-- Explicit documentation of implementation decisions
-- Incremental Git checkpoints
-
-The current test suite contains **216 automated tests**.
-
-## AI-Assisted Development
-
-QuantLab is also used as a practical environment for AI-assisted software development.
-
-AI coding tools are used to assist with implementation, investigation, testing, and code review. Generated work is treated as something to be evaluated and validated rather than automatically trusted.
-
-This includes checking AI-generated changes against project requirements, automated tests, expected behavior, and documented constraints.
+- Local AI development tooling
 
 ## Repository Structure
 
 ```text
 QuantLab/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── models/
-├── notebooks/
-├── reports/
+├── ai/
+│   └── README.md
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── BACKTEST_EVIDENCE_PACK_PILOT.md
+│   └── history/
+├── research/
+│   └── btc-001/
+│       ├── methodology/
+│       ├── results/
+│       └── evidence/
 ├── scripts/
 ├── src/
 │   └── quantlab/
 │       ├── backtest/
 │       ├── data/
 │       ├── experiments/
-│       └── portfolio/
+│       ├── features/
+│       ├── portfolio/
+│       ├── reports/
+│       ├── signals/
+│       └── strategies/
 ├── tests/
+├── pyproject.toml
+├── pytest.ini
 ├── requirements-dev.txt
 ├── .gitignore
 └── README.md
