@@ -1,0 +1,2 @@
+oos_start,oos_end,observations,invested_days,flat_days,exposure_pct,flat_pct,entries,exits,completed_trades,open_position_at_end,return_while_invested_compounded,bh_return_on_flat_days,sma_oos_return,bh_oos_return,sma_max_drawdown,bh_max_drawdown,drawdown_improvement
+2022-12-23,2026-07-09,1295,744,551,0.5745173745173745,0.4254826254826255,17,17,17,False,0.349899879338174,0.14619531771433536,0.4213191406250001,0.4579226367187501,-0.22212482351673113,-0.31838456692796513,0.096259743411234

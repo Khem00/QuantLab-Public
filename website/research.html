@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="BTC #001 QuantLab research: frozen SMA20/SMA50 strategy versus buy-and-hold with chronological out-of-sample validation."><title>Research — QuantLab</title><link rel="stylesheet" href="assets/site.css"></head><body data-page="research"><div id="site-header"></div><main><section class="page-hero wrap"><div class="eyebrow">RESEARCH NOTE / BTC #001</div><h1>Less drawdown.<br><span class="gradient">Not more return.</span></h1><p class="lead">An evidence-led comparison of a frozen Bitcoin SMA20/SMA50 crossover rule against buy-and-hold, using a chronological out-of-sample evaluation.</p><div class="tag-row"><span>CAUTION</span><span>DAILY BTC</span><span>OUT-OF-SAMPLE</span><span>FROZEN RULE</span></div></section>
+<section class="section wrap"><div class="study-meta"><div><small>DEVELOPMENT PERIOD</small><b>3,019 observations</b><span>Through 22 Dec 2022</span></div><div><small>OUT-OF-SAMPLE</small><b>1,295 observations</b><span>23 Dec 2022 – 09 Jul 2026</span></div><div><small>WARM-UP</small><b>50 bars</b><span>Retained for indicator context</span></div><div><small>RULE</small><b>SMA 20 / SMA 50</b><span>Long when fast average exceeds slow</span></div></div>
+<div class="section-head"><div><div class="eyebrow">OUT-OF-SAMPLE RESULTS</div><h2>Four metrics. One qualified conclusion.</h2></div><p>The strategy and benchmark were evaluated over the same stated OOS window. These are historical results under the declared configuration.</p></div>
+<div class="result-table-wrap"><table class="result-table"><thead><tr><th>Metric</th><th>SMA20/SMA50</th><th>Buy & hold</th><th>Difference / reading</th></tr></thead><tbody><tr><td>Total return</td><td>42.13%</td><td>45.79%</td><td class="negative">−3.66 percentage points</td></tr><tr><td>Sharpe ratio</td><td>0.5263</td><td>0.5124</td><td class="positive">+0.0139</td></tr><tr><td>Maximum drawdown</td><td>−22.21%</td><td>−31.84%</td><td class="positive">9.63 pp less severe</td></tr><tr><td>Annualized volatility</td><td>14.52%</td><td>16.43%</td><td class="positive">1.91 pp lower</td></tr></tbody></table></div>
+<div class="callout"><b>Interpretation</b><p>The strategy gave up 3.66 percentage points of cumulative return while experiencing a less severe maximum drawdown and lower realized volatility. The small Sharpe difference is not evidence of statistically significant risk-adjusted outperformance. The supported interpretation is historical exposure management, not demonstrated alpha.</p></div></section>
+<section class="section wrap" id="btc-evidence-dashboard">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">BTC #001 / HISTORICAL EVIDENCE</div>
+      <h2>Explore the out-of-sample results.</h2>
+      <p>Five views built from the published evidence files. Each chart describes the historical test period, not future market behaviour.</p>
+    </div>
+  </div>
+
+  <p id="chart-status" class="chart-status" role="status" aria-live="polite">Loading research evidence…</p>
+
+  <div class="research-chart-grid">
+    <article class="research-chart-card research-chart-wide">
+      <div class="research-chart-heading">
+        <div><span class="chart-index">01 / PERFORMANCE</span><h3>Portfolio value</h3></div>
+        <span class="chart-unit">Starting capital: 100,000</span>
+      </div>
+      <div class="chart-legend"><span><i class="legend-a"></i>SMA20 / SMA50</span><span><i class="legend-b"></i>Buy &amp; hold</span></div>
+      <div id="equity-chart" class="chart-visual"></div>
+      <p class="chart-caption">Daily out-of-sample portfolio values, from 23 Dec 2022 to 09 Jul 2026. Values are shown in the study's capital units.</p>
+    </article>
+
+    <article class="research-chart-card research-chart-wide">
+      <div class="research-chart-heading">
+        <div><span class="chart-index">02 / RISK</span><h3>Drawdown over time</h3></div>
+        <span class="chart-unit">Peak-to-trough decline</span>
+      </div>
+      <div class="chart-legend"><span><i class="legend-a"></i>SMA20 / SMA50</span><span><i class="legend-b"></i>Buy &amp; hold</span></div>
+      <div id="drawdown-chart" class="chart-visual"></div>
+      <p class="chart-caption">Drawdown is calculated from each daily equity curve relative to its previous running peak. Lower values indicate deeper declines.</p>
+    </article>
+
+    <article class="research-chart-card">
+      <div class="research-chart-heading">
+        <div><span class="chart-index">03 / EXPOSURE</span><h3>Recorded holding periods</h3></div>
+      </div>
+      <div id="exposure-chart" class="chart-visual exposure-visual"></div>
+      <p id="exposure-note" class="chart-caption">Loading exposure statistics…</p>
+      <p class="chart-footnote">Bars show recorded entry-to-exit holding periods. They are not daily portfolio P&amp;L.</p>
+    </article>
+
+    <article class="research-chart-card">
+      <div class="research-chart-heading">
+        <div><span class="chart-index">04 / REGIMES</span><h3>Returns by market regime</h3></div>
+      </div>
+      <div class="chart-legend"><span><i class="legend-a"></i>SMA20 / SMA50</span><span><i class="legend-b"></i>Buy &amp; hold</span></div>
+      <div id="regime-chart" class="chart-visual"></div>
+      <p class="chart-caption">Bull: close above a rising SMA200; bear: close below a falling SMA200; transition: all other observations. SMA200 direction is assessed against its value 30 days earlier. Returns are compounded within each classified regime.</p>
+    </article>
+
+    <article class="research-chart-card research-chart-wide">
+      <div class="research-chart-heading">
+        <div><span class="chart-index">05 / COST SENSITIVITY</span><h3>Return under slippage assumptions</h3></div>
+        <span class="chart-unit">Commission: 0</span>
+      </div>
+      <div id="slippage-chart" class="chart-visual"></div>
+      <p id="slippage-note" class="chart-caption">Loading cost-sensitivity results…</p>
+      <p class="chart-footnote">Slippage-only scenarios: 0%, 0.05%, 0.10% and 0.20%; commission remained zero. The engine models commission as an absolute cash amount per transaction, not a percentage of notional. This is not a complete real-world fee model or a live-cost estimate.</p>
+    </article>
+  </div>
+  <p class="chart-disclaimer">Interpretation: the tested strategy had lower historical maximum drawdown and volatility, but did not outperform buy-and-hold on cumulative return. Past performance does not establish future results.</p>
+</section><section class="section dark-panel"><div class="wrap"><div class="eyebrow">METHODOLOGY</div><h2>Freeze first. Evaluate later.</h2><div class="method-grid"><div><b>01 / Strategy</b><p>Long when SMA20 is above SMA50; otherwise flat. Parameters were frozen before the OOS evaluation.</p></div><div><b>02 / Split</b><p>70% development period and chronological holdout. No random shuffling. Fifty warm-up bars retained for rolling indicators.</p></div><div><b>03 / Execution</b><p>One-bar execution convention, initial capital 100,000, position size 1.0, base commission and slippage set to zero.</p></div><div><b>04 / Evaluation</b><p>Fresh OOS portfolio at the boundary. Pre-OOS signals neutralized. Benchmark: buy-and-hold.</p></div></div></div></section>
+<section class="section wrap"><div class="section-head"><div><div class="eyebrow">LIMITATIONS</div><h2>What this study does not establish.</h2></div></div><ul class="limit-list"><li>It does not establish future or live performance.</li><li>It does not establish robustness across other assets, venues, or market regimes.</li><li>Base commission and slippage were zero; the base result does not represent complete fee modelling.</li><li>It does not establish statistical significance or investability.</li><li>Historical data quality, provenance, and licensing remain relevant to interpretation.</li></ul><p class="small-note">This research is informational and methodological. It is not investment advice, a trading signal, or a recommendation to buy or sell any asset.</p><div class="actions"><a class="btn primary" href="https://github.com/Khem00/QuantLab-Public" target="_blank" rel="noopener">Inspect project source ↗</a><a class="btn secondary" href="evidence.html">How evidence is packaged →</a></div></section><section class="section wrap"><div class="section-head"><div><div class="eyebrow">BTC #001 / REPRODUCIBILITY</div><h2>Inspect the original evidence pack.</h2></div><p>These are the original research artifacts. The published CSVs were verified against their source SHA-256 hashes.</p></div><div class="actions"><a class="btn secondary" href="data/btc-001/evidence/report.md">Research report</a><a class="btn secondary" href="data/btc-001/evidence/manifest.json">Manifest</a><a class="btn secondary" href="data/btc-001/evidence/SHA256SUMS.txt">SHA-256 checksums</a></div></section></main><div id="site-footer"></div><script src="assets/site.js"></script><script src="assets/research-charts.js"></script></body></html>

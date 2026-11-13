@@ -1,0 +1,112 @@
+{
+  "pack_name": "QuantLab BTC SMA20/SMA50 Evidence Pack",
+  "pack_version": "1.0",
+  "generated_at": "2026-09-07T04:53:09.486574+00:00",
+  "verdict": "CAUTION",
+  "purpose": "Historical strategy validation and research audit evidence.",
+  "strategy": {
+    "name": "sma_cross",
+    "description": "BTC daily SMA20/SMA50 crossover",
+    "parameters": {
+      "fast_period": 20,
+      "slow_period": 50
+    },
+    "selection_status": "frozen_for_oos_validation"
+  },
+  "dataset": {
+    "name": "BTC_history.csv",
+    "development_rows": 3019,
+    "oos_rows": 1295,
+    "development_end": "2022-12-22 00:00:00",
+    "oos_start": "2022-12-23 00:00:00",
+    "oos_end": "2026-07-09 00:00:00",
+    "warmup_bars": 50
+  },
+  "benchmark": "buy_hold",
+  "headline_results": {
+    "sma_oos_return": 0.4213191406250001,
+    "buy_hold_oos_return": 0.4579226367187501,
+    "return_difference": -0.03660349609375002,
+    "sma_sharpe": 0.5263062535490485,
+    "buy_hold_sharpe": 0.5123872487122436,
+    "sharpe_difference": 0.01391900483680486,
+    "sma_max_drawdown": -0.2221248235167311,
+    "buy_hold_max_drawdown": -0.3183845669279651,
+    "drawdown_improvement": 0.09625974341123397,
+    "sma_volatility": 0.1452073886134262,
+    "buy_hold_volatility": 0.1642658784792953,
+    "volatility_difference": -0.01905848986586911
+  },
+  "exposure": {
+    "observations": 1295,
+    "invested_days": 744,
+    "flat_days": 551,
+    "exposure_pct": 0.5745173745173745,
+    "flat_pct": 0.4254826254826255,
+    "entries": 17,
+    "exits": 17,
+    "completed_trades": 17,
+    "open_at_oos_end": false
+  },
+  "cost_stress": {
+    "commission": 0.0,
+    "slippage_levels": [
+      0.0,
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "note": "Commission is absolute cash per transaction in the current engine; stress varies slippage only."
+  },
+  "regime_artifact": "regimes/regime_summary.csv",
+  "limitations": [
+    "Historical research only; not investment advice.",
+    "No return superiority over buy-and-hold was demonstrated.",
+    "No parameter optimization was performed after observing OOS results.",
+    "Complete real-world commission/fee modeling is not established by this pack.",
+    "Results do not establish future performance or live execution performance.",
+    "Cross-asset robustness is not established."
+  ],
+  "artifacts": [
+    {
+      "path": "exposure/exposure_summary.csv",
+      "sha256": "2cd921ef0af7fb50d20ee4ccb1ab738502cc0100bb7a889367a18b077d17a2be",
+      "bytes": 494
+    },
+    {
+      "path": "exposure/position_events.csv",
+      "sha256": "75653224ab2d78eb5c4cf6e631baf0775f2ce6d81733f10223a5cfc0e5f072ca",
+      "bytes": 1337
+    },
+    {
+      "path": "regimes/regime_episodes.csv",
+      "sha256": "57efcc25a060d759e388b9872de8d232cc23fde707e309e65ba15872968f6a47",
+      "bytes": 6016
+    },
+    {
+      "path": "regimes/regime_summary.csv",
+      "sha256": "c14d357dbd5713cd796e86f8eb6e54b6c32e77c6946479fa130caee6bccab31a",
+      "bytes": 624
+    },
+    {
+      "path": "report.md",
+      "sha256": "ce8f1026b5412c761ad873d575d50cb9116f5fe8d77b387a0731e89c9f4e895c",
+      "bytes": 8391
+    },
+    {
+      "path": "validation/buy_hold_oos_equity_curve.csv",
+      "sha256": "08c67bd6100f3fff32957c64414c38b8b37e2e44203b19364ad1dd79c7000307",
+      "bytes": 37276
+    },
+    {
+      "path": "validation/oos_summary.csv",
+      "sha256": "ebb2a0ed00a9e448bdf5eea8b23e05d9bad8c40a50b3bdff097a21723e105679",
+      "bytes": 728
+    },
+    {
+      "path": "validation/sma_cross_oos_equity_curve.csv",
+      "sha256": "dcc0739f7c325c5516f8391650feef65c7c8f005db824fc4c1ce5e10e8d2758d",
+      "bytes": 34888
+    }
+  ]
+}
