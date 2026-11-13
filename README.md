@@ -2,6 +2,8 @@
 
 **AI-assisted quantitative research with reproducible, evidence-first validation.**
 
+[Visit the QuantLab website](https://quantlab.quant-lab.workers.dev/)
+
 QuantLab is a Python-based quantitative research and financial analysis platform
 designed to turn market data and research ideas into testable, reproducible
 evidence.
